@@ -43,9 +43,9 @@ else:
     state_0 = np.column_stack((x_vec, y_vec, th_vec))
 
     # Vehicle parameters and constraints
-    L = 1.5;        # Wheel base (m)
-    v = 15;         # Constant velocity (m/s)
-    u_max = np.pi/4;   # Maximum steering angle (rad)
+    L = 1.5  # Wheel base (m)
+    v = 15   # Constant velocity (m/s)
+    u_max = np.pi/4  # Maximum steering angle (rad)
     
     # Construct a MotionPrimitives object and generate the 
     # motion primitives using the constructed lattice and 
@@ -194,7 +194,7 @@ def next_state(x, world, mp, rev=True, tol=1e-5):
             xi.append(next_idx)
             d.append(mpi['ds'])
             u.append([i, j, 1])
-    if rev: # With reverse driving
+    if rev:  # With reverse driving
         for i, j in mp.with_end_orientation_index(theta_i):
             mpi = mprims[i, j]
 

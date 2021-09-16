@@ -88,7 +88,7 @@ class MotionPrimitives:
         Compute a path p and direction information for a plan. 
         
         arguments:
-            x0 -- Initial state (index)
+            x0 -- Initial state
             plan -- Plan
 
         output:
@@ -106,7 +106,7 @@ class MotionPrimitives:
                 and red when reversing, you can write
 
                 segment_range = range(sp[k, 1], sp[k, 2])
-                plt.plot(p[0, segment_range], p[1, segment_range], "b" if sp[k, 0] == 1 else "r")
+                plt.plot(p[segment_range, 0], p[segment_range, 1], "b" if sp[k, 0] == 1 else "r")
         """
         return self.control_to_path(x0, plan["control"])
 
@@ -133,7 +133,7 @@ class MotionPrimitives:
                 and red when reversing, you can write
 
                 segment_range = range(sp[k, 1], sp[k, 2])
-                plt.plot(p[0, segment_range], p[1, segment_range], "b" if sp[k, 0] == 1 else "r")
+                plt.plot(p[segment_range, 0], p[segment_range, 1], "b" if sp[k, 0] == 1 else "r")
         """
         p0 = x0
         p = np.array([]).reshape((0, 3))
